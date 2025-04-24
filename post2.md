@@ -1,5 +1,3 @@
-# Javismo Cultural: Quando a Herança Pesa Mais que a Linguagem
-
 Esses dias estava ouvindo o podcast *Papinho Tech* e, em um dado momento, o convidado — um dev bem conhecido da comunidade Java — [soltou uma fala que me fez parar pra pensar](https://youtu.be/D3TTMcVeRZU?t=6319):
 
 > “Me perguntaram se eu entendia do Garbage Collector do Java. Eu falei: pra quê? Ele é automático, já limpa a memória sozinho.”
