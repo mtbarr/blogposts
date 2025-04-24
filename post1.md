@@ -30,7 +30,7 @@ Por isso, **valide sempre, também, dentro do seu sistema**. Métodos e construt
 
 E quando algo der errado, **gere erros descritivos**. Ao invés de lançar um `NullPointerException` genérico, por exemplo, prefira criar uma exceção com uma mensagem clara, como:  
 > `"O Usuário não possui um país de origem"`  
-> Essa prática facilita a manutenção e ajuda quem estiver debugando no futuro (incluindo você mesmo).
+> `# Essa prática facilita a manutenção e ajuda quem estiver debugando no futuro (incluindo você mesmo).`
 
 ## Valide em camadas. E sim, pode repetir.
 
