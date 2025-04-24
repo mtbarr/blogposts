@@ -4,25 +4,25 @@ Recentemente, me deparei com um bug causado por um valor inesperado que passou d
 
 Essa situação reforça algo que considero essencial em qualquer projeto: **validar os dados desde a entrada**. Pode parecer uma prática simples, mas ela evita problemas muito maiores lá na frente.
 
-## O que são as bordas?
+### O que são as bordas?
 
 Chamamos de "borda" qualquer ponto de entrada de dados no seu sistema. Pode ser um endpoint de API, um formulário da web, uma fila de mensagens, um arquivo de configuração, ou até mesmo o construtor de uma classe. Sempre que você recebe algo de fora — ou até de outra parte do seu próprio sistema — está lidando com uma borda.
 
 E como em qualquer fronteira, **você não pode confiar cegamente no que está entrando**. É aqui que a validação se torna essencial.
 
-## Validação não é desconfiança. É proteção.
+### Validação não é desconfiança. É proteção.
 
 Não importa se os dados vêm do usuário final, de uma aplicação interna, ou até do seu próprio código: **dados não validados são uma ameaça em potencial**. Pode ser algo simples, como um campo obrigatório vazio, um número fora do intervalo esperado, uma string em formato inválido, um valor de enum desconhecido ou até mesmo um `null` onde não deveria existir. 
 
 A princípio, essas falhas podem parecer inofensivas, mas, com o tempo, um desses valores incorretos pode causar uma exceção em produção ou, pior, corromper silenciosamente a lógica de negócio. E o impacto disso nem sempre é imediato. Às vezes, os efeitos só aparecem quando já é tarde demais.
 
-## Ferramentas modernas estão aí para ajudar
+### Ferramentas modernas estão aí para ajudar
 
 Felizmente, frameworks modernos oferecem muitas maneiras de automatizar a validação. Se você utiliza Java, por exemplo, pode contar com anotações como `@NotNull`, `@Min`, `@Size`, `@Email` e outras. Essas anotações permitem validar os dados já na entrada do seu controller ou DTO, sem a necessidade de escrever condições manuais repetidamente. Essa abordagem é rápida, padronizada e evita a redundância de código, te livrando de várias dores de cabeça.
 
 Se a sua stack não oferece esse tipo de suporte de forma eficiente, vale a pena considerar outra abordagem ou até trocar de ferramenta. Reescrever as mesmas regras básicas de validação o tempo todo é trabalho perdido.
 
-## Não pare por aí: valide também dentro do sistema
+### Não pare por aí: valide também dentro do sistema
 
 Muita gente faz a validação na camada de entrada e acha que está tudo resolvido, mas o que acontece se alguém chamar uma função interna diretamente, sem passar por aquela primeira camada de validação? O código ainda está vulnerável.
 
@@ -32,7 +32,7 @@ E quando algo der errado, **gere erros descritivos**. Ao invés de lançar um `N
 > `"O Usuário não possui um país de origem"`  
 > `# Essa prática facilita a manutenção e ajuda quem estiver debugando no futuro (incluindo você mesmo).`
 
-## Valide em camadas. E sim, pode repetir.
+### Valide em camadas. E sim, pode repetir.
 
 Pode parecer exagero, mas é justamente a redundância de validação que torna seu sistema mais confiável. Você deve validar em várias camadas do seu sistema:
 
@@ -42,7 +42,7 @@ Pode parecer exagero, mas é justamente a redundância de validação que torna 
 
 Essa validação em camadas é uma forma de garantir que, mesmo que uma delas falhe, as outras ainda protegerão a aplicação. E caso um ponto intermediário mude de comportamento, as outras camadas continuarão a proteger seu sistema.
 
-## Conclusão
+### Conclusão
 
 Embora todos saibam que dados ruins geram problemas, ainda assim deixamos passar algumas validações aqui e ali. Às vezes por pressa, outras vezes por descuido. O que é certo é que, invariavelmente, o resultado aparece mais tarde — seja como um bug irritante, uma regra de negócio quebrada ou uma exceção misteriosa que ninguém sabe de onde veio.
 
